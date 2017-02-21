@@ -1,6 +1,7 @@
 ---
 - hosts: all
-
-- name: Check for ansible updates in yum systems
-  yum: update_cache=yes list=ansible
-  
+  remote_user: root
+  tasks:
+    - name: Check for ansible updates in yum systems
+      yum: update_cache=yes list=ansible
+      
