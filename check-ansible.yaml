@@ -4,4 +4,7 @@
   tasks:
     - name: Check for ansible updates in yum systems
       yum: update_cache=yes list=ansible
-      
+      register: output
+    
+    - name: Show result
+      debug: var=output
